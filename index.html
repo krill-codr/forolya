@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для Оли</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+        body{
+            font-family:"Roboto Slab", serif;
+            background-image: url(https://gallery.yopriceville.com/downloadfullsize/send/5416);
+            background-size: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2{
+            filter: drop-shadow(0 0 0.3rem crimson);
+            color: rgb(255, 255, 255);
+        }
+        button{
+            width: 150px;
+            height: auto;
+        }
+        .spacer{
+            height: 500px;
+            width: 375px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.715);
+            border-radius: 12px;
+            overflow: scroll;
+        }
+        li{
+            list-style-type: none;
+            color: crimson;
+        }
+        #list{
+            padding-left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2>С днем рождения, Оля!</h2>
+    <div class="spacer">
+        <ol id="list">
+        </ol>
+    </div>
+    <img id="btn" style="width: 200px;" src="https://pngicon.ru/file/uploads/gljancevoe-serdechko.png" alt="">
+    <p>Нажми на сердечко</p>
+    <script>
+        'use strict';
+        let arr=['Оля, с днём рождения!🎂💖','Желаю тебе всего самого лучшего!💖💗💘','Желаю послушных внуков)💖','Мы все тебя любим💗💘💖','Желаю нашего скорого приезда)','Желаю хорошей погоды и солнышка (и снега)💖💖💖']
+        function getRandomInt(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+        }
+        function getPhrase(){
+            return arr[getRandomInt(0,5)]
+        }
+        btn.addEventListener('click',function(){
+            let ph=document.createElement('li')
+            ph.innerHTML=getPhrase()
+            list.appendChild(ph)
+        });
+    </script>
+</body>
+</html>
